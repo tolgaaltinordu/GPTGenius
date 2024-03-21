@@ -10,7 +10,6 @@ export default function HomePage() {
             GPTGenius: Your AI language companion. Powered by OpenAI, it
             enhances your conversations, content creation, and more!
           </p>
-          {/* <button className="btn btn-primary">Get Started</button> */}
           <Link href="/chat" className="btn btn-secondary">Get Started</Link>
         </div>
       </div>
