@@ -1,10 +1,9 @@
-import React from 'react'
+import { UserProfile } from "@clerk/nextjs"
+
 
 function ProfilePage() {
     return (
-        <div>
-            <h3 className='text-5xl'>Profile Page</h3>
-        </div>
+        <UserProfile />
     )
 }
 
