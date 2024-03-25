@@ -1,9 +1,9 @@
-import React from 'react'
+import Chat from "@/components/Chat"
 
 function ChatPage() {
     return (
         <div>
-            <h3 className='text-5xl'>Chat Page</h3>
+            <Chat />
         </div>
     )
 }
