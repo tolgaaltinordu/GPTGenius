@@ -1,5 +1,6 @@
 "use server"
 import OpenAI from "openai"
+import prisma from "./db";
 
 
 const openai = new OpenAI({
@@ -24,9 +25,6 @@ export const generateChatResponse = async (chatMessages) => {
     }
 };
 
-export const getExistingTour = async ({ city, country }) => {
-    return null
-}
 export const generateTourResponse = async ({ city, country }) => {
     // await new Promise((resolve) => setTimeout(resolve, 2000))
     const query = `Find a exact ${city} in this exact ${country}.
@@ -63,7 +61,20 @@ export const generateTourResponse = async ({ city, country }) => {
         return null
     }
 }
-export const createNewTour = async ({ city, country }) => {
-    return null
+
+export const getExistingTour = async ({ city, country }) => {
+    return prisma.tour.findUnique({
+        where: {
+            city_country: {
+                city, country
+            }
+        }
+    })
+}
+
+export const createNewTour = async (tour) => {
+    return prisma.tour.create({
+        data: tour
+    })
 }
 
