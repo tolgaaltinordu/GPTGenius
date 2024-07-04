@@ -53,7 +53,7 @@ function Chat() {
                 <div className="join w-full">
                     <input
                         type="text"
-                        placeholder="Message GeniusGPT"
+                        placeholder="Message GPTJourney"
                         className="input input-bordered join-item w-full"
                         value={text}
                         required
